@@ -1,6 +1,6 @@
 {
   "name": "@ymsh-cli/utils",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "ymsh-cli utils",
   "author": "zhanghl <987202055@qq.com>",
   "homepage": "",
@@ -16,5 +16,5 @@
   "scripts": {
     "test": "echo \"Run testing from utils\""
   },
-  "gitHead": "1a1f66365c3014fbea1f1a20dd8e665a51ac004c"
+  "gitHead": "bed505e41886ea82d8cec49a2513896bdc2120d5"
 }
