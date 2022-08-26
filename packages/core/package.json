@@ -1,0 +1,22 @@
+{
+  "name": "@ymsh-cli/core",
+  "version": "1.0.0",
+  "description": "ymsh-cli core",
+  "author": "zhanghl <987202055@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Run testing from core\""
+  },
+  "dependencies": {
+    "@ymsh-cli/utils": "^1.0.0"
+  }
+}
