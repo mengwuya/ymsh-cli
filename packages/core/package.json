@@ -20,7 +20,7 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
-    "@ymsh-cli/utils": "^1.0.3"
+    "@ymsh-cli/utils": "^1.0.4"
   },
   "gitHead": "c0fd73e65974466afb39f566e08d87b3318772d6",
   "publishConfig": {
