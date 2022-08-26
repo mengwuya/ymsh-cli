@@ -6,6 +6,9 @@
   "homepage": "",
   "license": "ISC",
   "main": "lib/core.js",
+  "bin": {
+    "ymsh-cli": "bin/index.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -18,5 +21,6 @@
   },
   "dependencies": {
     "@ymsh-cli/utils": "^1.0.2"
-  }
+  },
+  "gitHead": "1a1f66365c3014fbea1f1a20dd8e665a51ac004c"
 }
