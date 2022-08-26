@@ -1,6 +1,6 @@
 {
   "name": "@ymsh-cli/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ymsh-cli core",
   "author": "zhanghl <987202055@qq.com>",
   "homepage": "",
@@ -17,6 +17,6 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
-    "@ymsh-cli/utils": "^1.0.0"
+    "@ymsh-cli/utils": "^1.0.1"
   }
 }
