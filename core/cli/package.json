@@ -5,7 +5,7 @@
   "author": "zhanghl <987202055@qq.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/core.js",
+  "main": "lib/index.js",
   "bin": {
     "ymsh-cli": "bin/index.js"
   },
@@ -20,7 +20,19 @@
     "test": "echo \"Run testing from core\""
   },
   "dependencies": {
-    "@ymsh-cli/utils": "^1.0.4"
+    "@ymsh-cli/get-npm-info": "file:../../utils/get-npm-info",
+    "@ymsh-cli/log": "file:../../utils/log",
+    "@ymsh-cli/init": "file:../../commands/init",
+    "colors": "^1.4.0",
+    "commander": "^6.1.0",
+    "dotenv": "^8.2.0",
+    "import-local": "^3.1.0",
+    "minimist": "^1.2.6",
+    "npmlog": "^6.0.2",
+    "path-exists": "^4.0.0",
+    "root-check": "^1.0.0",
+    "semver": "^7.3.7",
+    "user-home": "^2.0.0"
   },
   "gitHead": "c0fd73e65974466afb39f566e08d87b3318772d6",
   "publishConfig": {
