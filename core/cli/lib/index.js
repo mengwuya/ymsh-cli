@@ -12,22 +12,19 @@ const pkg = require('../package.json');
 const constant = require('./const');
 const path = require('path');
 const init = require('@ymsh-cli/init');
+const exec = require('@ymsh-cli/exec');
 
-let args;
 const program = new commander.Command();
 
 async function core() {
     try {
-        checkPkgVersion();
-        checkNodeVersion();
-        checkRoot();
-        checkUserHome();
-        // checkInputArgs();
-        checkEnv();
-        await checkGlobalUpdate();
+        await prepare();
         registerCommand();
     } catch (e) {
         log.error(e.message);
+        if (program.debug) {
+            console.log(e);
+        }
     }
 
 }
@@ -62,22 +59,6 @@ function checkUserHome() {
     }
 }
 
-// 检查入参
-function checkInputArgs() {
-    const minimist = require('minimist');
-    args = minimist(process.argv.slice(2));
-    checkArgs();
-}
-
-function checkArgs() {
-    if (args.debug) {
-        process.env.LOG_LEVEL = 'verbose';
-    } else {
-        process.env.LOG_LEVEL = 'info';
-    }
-    log.level = process.env.LOG_LEVEL;
-}
-
 // 创建默认的配置
 function createDefaultConfig() {
     const cliConfig = {
@@ -101,7 +82,6 @@ function checkEnv() {
         });
     }
     createDefaultConfig();
-    log.verbose('环境变量', process.env.CLI_HOME_PATH);
 }
 
 async function checkGlobalUpdate() {
@@ -124,12 +104,13 @@ function registerCommand() {
         .name(Object.keys(pkg.bin)[0])
         .usage('<command> [options]')
         .version(pkg.version)
-        .option('-d, --debug', '是否开启调试模式', false);
+        .option('-d, --debug', '是否开启调试模式', false)
+        .option('-tp, --targetPath <targetPath>', '是否指定本地调试文件路径', '');
 
     program
         .command('init [projectName]')
         .option('-f, --force', '是否强制初始化项目')
-        .action(init);
+        .action(exec);
 
     // 开启debug模式
     program.on('option:debug', function () {
@@ -139,6 +120,11 @@ function registerCommand() {
             process.env.LOG_LEVEL = 'info';
         }
         log.level = process.env.LOG_LEVEL;
+    });
+
+    // 指定targetPath
+    program.on('option:targetPath', function () {
+        process.env.CLI_TARGET_PATH = program.targetPath;
     });
 
     // 对未知命令监听
@@ -156,4 +142,13 @@ function registerCommand() {
         program.outputHelp();
         console.log();
     }
+}
+
+async function prepare(params) {
+    checkPkgVersion();
+    checkNodeVersion();
+    checkRoot();
+    checkUserHome();
+    checkEnv();
+    await checkGlobalUpdate();
 }

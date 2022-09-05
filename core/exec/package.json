@@ -1,0 +1,33 @@
+{
+  "name": "@ymsh-cli/exec",
+  "version": "1.0.0",
+  "description": "ymsh-cli execute package",
+  "author": "zhanghl <987202055@qq.com>",
+  "homepage": "https://github.com/mengwuya/ymsh-cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengwuya/ymsh-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@ymsh-cli/package": "file:../../models/package",
+    "@ymsh-cli/log": "file:../../utils/log"
+  },
+  "bugs": {
+    "url": "https://github.com/mengwuya/ymsh-cli/issues"
+  }
+}
