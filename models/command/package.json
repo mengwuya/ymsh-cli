@@ -1,7 +1,7 @@
 {
-  "name": "@ymsh-cli/init",
+  "name": "@ymsh-cli/command",
   "version": "1.0.0",
-  "description": "ymsh-cli init",
+  "description": "ymsh-cli Command",
   "author": "zhanghl <987202055@qq.com>",
   "homepage": "https://github.com/mengwuya/ymsh-cli#readme",
   "license": "ISC",
@@ -23,11 +23,12 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "dependencies": {
-    "@ymsh-cli/command": "file:../../models/command",
-    "@ymsh-cli/log": "file:../../utils/log"
-  },
   "bugs": {
     "url": "https://github.com/mengwuya/ymsh-cli/issues"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "semver": "^7.3.4",
+    "@ymsh-cli/log": "file:../../utils/log"
   }
 }

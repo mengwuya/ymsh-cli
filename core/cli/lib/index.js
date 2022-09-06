@@ -11,7 +11,6 @@ const log = require('@ymsh-cli/log');
 const pkg = require('../package.json');
 const constant = require('./const');
 const path = require('path');
-const init = require('@ymsh-cli/init');
 const exec = require('@ymsh-cli/exec');
 
 const program = new commander.Command();
@@ -27,17 +26,6 @@ async function core() {
         }
     }
 
-}
-
-// 检查node版本
-function checkNodeVersion() {
-    // 第一步 获取当前node版本号
-    const currentVersion = process.version;
-    // 第二步 比对最低版本号
-    const lowestVersion = constant.LOWEST_NODE_VERSION;
-    if (!semver.gte(currentVersion, lowestVersion)) {
-        throw new Error(colors.red(`ymsh-cli 需要安装 v${lowestVersion} 以上版本的 Node.js`));
-    }
 }
 
 // 检查版本
@@ -146,7 +134,6 @@ function registerCommand() {
 
 async function prepare(params) {
     checkPkgVersion();
-    checkNodeVersion();
     checkRoot();
     checkUserHome();
     checkEnv();
