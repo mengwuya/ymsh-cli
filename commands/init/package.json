@@ -25,7 +25,10 @@
   },
   "dependencies": {
     "@ymsh-cli/command": "file:../../models/command",
-    "@ymsh-cli/log": "file:../../utils/log"
+    "@ymsh-cli/log": "file:../../utils/log",
+    "fs-extra": "^9.0.0",
+    "inquirer": "^7.3.3",
+    "semver": "^7.3.4"
   },
   "bugs": {
     "url": "https://github.com/mengwuya/ymsh-cli/issues"
