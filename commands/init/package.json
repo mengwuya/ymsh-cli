@@ -25,10 +25,18 @@
   },
   "dependencies": {
     "@ymsh-cli/command": "file:../../models/command",
+    "@ymsh-cli/package": "file:../../models/package",
     "@ymsh-cli/log": "file:../../utils/log",
-    "fs-extra": "^9.0.0",
+    "@ymsh-cli/request": "file:../../utils/request",
+    "@ymsh-cli/utils": "file:../../utils/utils",
+    "ejs": "^3.1.5",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
     "inquirer": "^7.3.3",
-    "semver": "^7.3.4"
+    "kebab-case": "^1.0.0",
+    "semver": "^7.3.4",
+    "spinner": "^0.3.4",
+    "user-home": "^2.0.0"
   },
   "bugs": {
     "url": "https://github.com/mengwuya/ymsh-cli/issues"
